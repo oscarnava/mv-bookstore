@@ -1,0 +1,4 @@
+!.*
+dist/
+webpack.config.babel.js
+src/serviceWorker.js
