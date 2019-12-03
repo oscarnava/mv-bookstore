@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createBook } from '../actions';
-// import PropTypes from 'prop-types';
 
 const categories = [
   'Action',
@@ -62,6 +62,6 @@ const BooksForm = ({ createBook }) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksForm);
 
-// BooksForm.propTypes = {
-//   books: PropTypes.array.isRequired,
-// };
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+};
