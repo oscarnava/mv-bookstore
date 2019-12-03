@@ -20,11 +20,14 @@ const mapDispatchToProps = (dispatch) => ({
 
 const BooksForm = ({ createBook }) => {
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState('');
   const handleSubmit = () => {
     createBook({ id: new Date().getTime(), title, category });
     setTitle('');
     setCategory('');
+    if (!categories.includes(category)) {
+      categories.push(category);
+    }
   };
   return (
     <>
