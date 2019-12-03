@@ -1,27 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Book from './Book';
+// import PropTypes from 'prop-types';
 
-const BooksForm = ({ books }) => (
-  <form>
-    <label htmlFor="title">Title</label>
-    <input type="text" name="title" id="title" />
-    <label htmlFor="category">Category</label>
-    <input list="category-list" />
+const BooksForm = () => (
+  <>
+    <label htmlFor="title">
+      Title
+      <input type="text" name="title" id="title" />
+    </label>
+    <label htmlFor="category">
+      Category
+      <input list="category-list" />
+    </label>
     <datalist id="category-list">
-      <option value="Action" />
-      <option value="Biography" />
-      <option value="History" />
-      <option value="Horror" />
-      <option value="Kids" />
-      <option value="Learning" />
-      <option value="Sci-Fi" />
+      <option value="Action">Action</option>
+      <option value="Biography">Biography</option>
+      <option value="History">History</option>
+      <option value="Horror">Horror</option>
+      <option value="Kids">Kids</option>
+      <option value="Learning">Learning</option>
+      <option value="Sci-Fi">Sci-Fi</option>
     </datalist>
-  </form>
+    <button type="submit">Add book</button>
+  </>
 );
 
 export default BooksForm;
 
 // BooksForm.propTypes = {
-// books: PropTypes.array.isRequired,
+//   books: PropTypes.array.isRequired,
 // };

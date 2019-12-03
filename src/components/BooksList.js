@@ -2,19 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
 
-const BooksList = ({ books }) => (
+const BooksList = ({ books = [] }) => (
   <table>
-    <tr>
-      <th>Book ID</th>
-      <th>Title</th>
-      <th>Category</th>
-    </tr>
-    {books && books.map((book) => <Book key={book.id} book={book} />)}
+    <thead>
+      <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      {books && books.map((book) => <Book key={book.id} book={book} />)}
+    </tbody>
   </table>
 );
 
 export default BooksList;
 
+BooksList.defaultProps = {
+  books: [],
+};
+
 BooksList.propTypes = {
-  books: PropTypes.array.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  books: PropTypes.any,
 };

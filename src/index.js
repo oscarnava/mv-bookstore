@@ -1,6 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
+import reducers from './reducers';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const testLibrary = [
+  { id: Math.floor(Math.random() * 1000), title: 'Tale of two towns', category: 'Classic literature' },
+  { id: Math.floor(Math.random() * 1000), title: 'Foundation', categry: 'Sci-Fi' },
+  { id: Math.floor(Math.random() * 1000), title: 'The C programming language', category: 'Learning' },
+];
+
+const store = createStore(reducers, {
+  books: testLibrary,
+});
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);
