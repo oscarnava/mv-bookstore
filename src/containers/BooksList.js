@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
 const mapStateToProps = ({ books }) => ({ books });
-const mapDispatchToProps = () => ({});
+// const mapDispatchToProps = () => ({});
 
 const BooksList = ({ books = [] }) => (
   <table>
@@ -21,7 +21,7 @@ const BooksList = ({ books = [] }) => (
   </table>
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
+export default connect(mapStateToProps, null)(BooksList);
 
 BooksList.defaultProps = {
   books: [],
