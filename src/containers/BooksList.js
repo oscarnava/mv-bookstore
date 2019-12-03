@@ -1,6 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Book from './Book';
+import Book from '../components/Book';
+
+const mapStateToProps = ({ books }) => ({ books });
+const mapDispatchToProps = () => ({});
 
 const BooksList = ({ books = [] }) => (
   <table>
@@ -17,7 +21,7 @@ const BooksList = ({ books = [] }) => (
   </table>
 );
 
-export default BooksList;
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
 
 BooksList.defaultProps = {
   books: [],
