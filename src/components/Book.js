@@ -7,10 +7,7 @@ const Book = ({ book, handleRemoveBook }) => (
     <td>{book.title}</td>
     <td>{book.category}</td>
     <td>
-      <button
-        type="button"
-        onClick={handleRemoveBook}
-      >
+      <button type="button" onClick={handleRemoveBook}>
         Remove
       </button>
     </td>
@@ -19,7 +16,7 @@ const Book = ({ book, handleRemoveBook }) => (
 
 export default Book;
 Book.propTypes = {
-  book: PropTypes.objectOf({
+  book: PropTypes.exact({
     id: PropTypes.number,
     title: PropTypes.string,
     category: PropTypes.string,
