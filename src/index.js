@@ -7,9 +7,21 @@ import App from './components/App';
 import reducers from './reducers';
 
 const testLibrary = [
-  { id: Math.floor(Math.random() * 1000), title: 'Tale of two towns', category: 'Classic literature' },
-  { id: Math.floor(Math.random() * 1000), title: 'Foundation', categry: 'Sci-Fi' },
-  { id: Math.floor(Math.random() * 1000), title: 'The C programming language', category: 'Learning' },
+  {
+    id: Math.floor(Math.random() * 1000),
+    title: 'Tale of two towns',
+    category: 'Classic literature',
+  },
+  {
+    id: Math.floor(Math.random() * 1000),
+    title: 'Foundation',
+    category: 'Sci-Fi',
+  },
+  {
+    id: Math.floor(Math.random() * 1000),
+    title: 'The C programming language',
+    category: 'Learning',
+  },
 ];
 
 const store = createStore(reducers, {
