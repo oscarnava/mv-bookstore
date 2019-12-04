@@ -28,3 +28,6 @@
 6. Authors:
 - **Alex Baas** - [@b-a-a-s](https://github.com/b-a-a-s)
 - **Oscar Nava Trujillo** - [@oscarnava](https://github.com/oscarnava)
+
+7. Live preview:
+- [mv-bookstore](https://oscarnava.github.io/mv-bookstore/)
