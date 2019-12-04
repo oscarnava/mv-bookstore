@@ -18,38 +18,42 @@ const BooksForm = ({ createBook }) => {
     setCategory('');
     if (!categories.includes(category)) {
       categories.push(category);
+      categories.sort();
     }
   };
   return (
     <>
-      <label htmlFor="title">
-        Title
+      <h2 className="book-form-header">Add new book</h2>
+      <div id="book-form">
         <input
+          id="title-input"
           type="text"
           name="title"
-          id="title"
           value={title}
+          placeholder="Book title"
           onChange={(e) => setTitle(e.target.value)}
         />
-      </label>
-      <label htmlFor="category">
-        Category
         <input
+          id="category-input"
           list="category-list"
           value={category}
+          placeholder="Category"
           onChange={(e) => setCategory(e.target.value)}
         />
-      </label>
-      <datalist id="category-list">
-        {categories.map((cat) => (
-          <option key={cat} value={cat}>
-            {cat}
-          </option>
-        ))}
-      </datalist>
-      <button type="submit" onClick={handleSubmit}>
+        <datalist id="category-list">
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </datalist>
+        <button id="submit-btn" type="submit" onClick={handleSubmit}>
         Add book
-      </button>
+        </button>
+      </div>
+      <div id="category-hint">
+        Tip: If the category doesn&apos;t exist in the list, just type it in the editor; it will be added to the categories list.
+      </div>
     </>
   );
 };
