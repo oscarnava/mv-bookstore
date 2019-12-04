@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeBook } from '../actions';
 import Book from '../components/Book';
 
 const mapStateToProps = ({ books }) => ({ books });
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+  removeBook: (id) => dispatch(removeBook(id)),
+});
 
-const BooksList = ({ books = [] }) => (
+const BooksList = ({ books = [], removeBook }) => (
   <table>
     <thead>
       <tr>
@@ -16,7 +19,16 @@ const BooksList = ({ books = [] }) => (
       </tr>
     </thead>
     <tbody>
-      {books && books.map((book) => <Book key={book.id} book={book} />)}
+      {books
+        && books.map((book) => (
+          <Book
+            key={book.id}
+            book={book}
+            handleRemoveBook={() => {
+              removeBook(book.id);
+            }}
+          />
+        ))}
     </tbody>
   </table>
 );
@@ -28,6 +40,6 @@ BooksList.defaultProps = {
 };
 
 BooksList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  books: PropTypes.any,
+  books: PropTypes.arrayOf(PropTypes.object),
+  removeBook: PropTypes.func.isRequired,
 };
