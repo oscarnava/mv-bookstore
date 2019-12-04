@@ -16,14 +16,7 @@ const BooksList = ({
 }) => (
   <>
     <CategoryFilter filter={filter} changeFilter={changeFilter} />
-    <table>
-      <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-      </thead>
+    <table className="book-list">
       <tbody>
         {books
           && books

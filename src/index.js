@@ -6,21 +6,28 @@ import './index.css';
 import App from './components/App';
 import reducers from './reducers';
 
+const randomId = () => 9780000000000 + Math.floor(Math.random() * 10000000000);
+
 const testLibrary = [
   {
-    id: Math.floor(Math.random() * 1000),
+    id: randomId(),
     title: 'Tale of two towns',
     category: 'Classic literature',
   },
   {
-    id: Math.floor(Math.random() * 1000),
+    id: randomId(),
     title: 'Foundation',
     category: 'Sci-Fi',
   },
   {
-    id: Math.floor(Math.random() * 1000),
+    id: randomId(),
     title: 'The C programming language',
     category: 'Learning',
+  },
+  {
+    id: randomId(),
+    title: 'Napoleon',
+    category: 'Biography',
   },
 ];
 
