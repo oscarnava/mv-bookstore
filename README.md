@@ -1,4 +1,4 @@
-# Calculator ([Microverse](https://microverse.org))
+# Bookstore ([Microverse](https://microverse.org))
 
 1. Design:
 - Fonts: [Google Sans](https://fonts.googleapis.com/css?family=Google+Sans:100,200,300,400,500,600,700,800,900,1000)
@@ -13,6 +13,7 @@
 3. Frontend:
 - Languages: Javascript
 - Framework: React
+- Libraries: Redux
 - Template: [Create-react-app](https://github.com/facebook/create-react-app)
 
 4. DevOps:
@@ -20,9 +21,10 @@
 - Buildpack: https://github.com/mars/create-react-app-buildpack
 
 5. URL:
-- https://mv-calculator.herokuapp.com/
+- https://mv-bookstore.herokuapp.com/
 
-5. Source code: https://github.com/b-a-a-s/mv-calculator
+5. Source code: https://github.com/b-a-a-s/mv-bookstore
 
 6. Authors:
 - **Alex Baas** - [@b-a-a-s](https://github.com/b-a-a-s)
+- **Oscar Nava Trujillo** - [@oscarnava](https://github.com/oscarnava)
