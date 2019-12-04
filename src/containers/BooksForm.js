@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
 const BooksForm = ({ createBook }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
+  const handleChange = (e) => {
+    setCategory(e.target.value);
+  };
   const handleSubmit = () => {
     createBook({ id: new Date().getTime(), title, category });
     setTitle('');
@@ -43,11 +46,7 @@ const BooksForm = ({ createBook }) => {
       </label>
       <label htmlFor="category">
         Category
-        <input
-          list="category-list"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        />
+        <input list="category-list" value={category} onChange={handleChange} />
       </label>
       <datalist id="category-list">
         {categories.map((cat) => (
