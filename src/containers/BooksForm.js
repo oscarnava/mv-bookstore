@@ -36,6 +36,7 @@ const BooksForm = ({ createBook }) => {
       <label htmlFor="category">
         Category
         <input
+          type="text"
           name="category"
           list="category-list"
           value={category}
